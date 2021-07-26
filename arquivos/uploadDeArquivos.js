@@ -3,20 +3,22 @@ const path = require('path');
 
 module.exports = (pathPet, petName, callbackImagemCriada) => {
     
-    const validTypes = ['jpg', 'png', 'jpeg'];
-    const type = path.extname(pathPet);
-    const typeIsValid = validTypes.indexOf(type.substring(1));
 
-    if (typeIsValid === -1) 
-        return console.log('Erro! Tipo invalido');
+        const validTypes = ['jpg', 'png', 'jpeg'];
+        const type = path.extname(pathPet);
 
-    const newPath = `./assets/imagens/${petName}${type}`;
-    fs.createReadStream(pathPet)
-        .pipe(fs.createWriteStream(newPath))
-        .on('finish', () => {
-           callbackImagemCriada(newPath); 
-        })
+        if (validTypes.indexOf(type.substring(1)) === -1) {
 
+            return callbackImagemCriada('Erro! Tipo invalido'); 
+        }
+
+        const newPath = `./assets/imagens/${petName}${type}`;
+        
+        fs.createReadStream(pathPet)
+            .pipe(fs.createWriteStream(newPath))
+            .on('finish', () => {
+                callbackImagemCriada(false, newPath); 
+            });
 }
 
 //passar para base 64
