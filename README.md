@@ -3,3 +3,4 @@ Repositório destinado as aulas de node
 
 - [Aula 001](https://github.com/Alexbbianchi/alura_nodejs/tree/aula001)
 - [Aula 002](https://github.com/Alexbbianchi/alura_nodejs/tree/aula002)
+- [Aula 003](https://github.com/Alexbbianchi/alura_nodejs/tree/aula003)
