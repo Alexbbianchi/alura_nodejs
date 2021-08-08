@@ -10,8 +10,8 @@ app.get('/:cpf', (req, res) => {
 
     res.status(200).json({
         cpf,
-        nome: faker.name.findName(),
-        dataDeNascimento: faker.date.past()
+        name: faker.name.findName(),
+        birthDate: faker.date.past()
     })
 })
 
